@@ -1,0 +1,5 @@
+3rdParty/
+i18n/
+node_modules/
+dist/
+.stack-work/
