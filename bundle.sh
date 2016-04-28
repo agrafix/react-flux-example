@@ -33,7 +33,7 @@ echo "Building production bundle ... "
 tmpbundle=$(mktemp /tmp/prodb.XXXXXX)
 cp "$DIST/bundle.js" "$tmpbundle"
 sed -i -- 's/process.env.NODE_ENV/"production"/' "$tmpbundle"
-$(npm bin)/uglifyjs --compress warnings=false -- "$tmpbundle" "$DEV_FILE" >> "$PROD_FILE"
+$(npm bin)/uglifyjs --compress warnings=false --mangle -- "$tmpbundle" "$DEV_FILE" >> "$PROD_FILE"
 
 echo "Copying needed css files ... "
 cp node_modules/leaflet/dist/leaflet.css "$DIST/leaflet.css"
