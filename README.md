@@ -20,5 +20,6 @@ open dist/index.html
 * I18N
 * Code mimification
 * JavaScript (dependency) bundling
+* Canvas
 * Tested to work in IE9+
 * Final resulting JavaScript "binary" with all dependencies is only **1.0 MB** in size

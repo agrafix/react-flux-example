@@ -5,6 +5,8 @@
 {-# LANGUAGE TemplateHaskell #-}
 module Main where
 
+import Canvas
+
 import Control.DeepSeq
 import Data.Aeson (object, (.=))
 import Data.Typeable
@@ -45,6 +47,8 @@ counterApp =
     do span_ [] $ int_ $ unCounter counterState
        button_ [ onClick $ \_ _ -> dispatchCounter CounterIncrement ] $ $(message "up-button" "Up") []
        button_ [ onClick $ \_ _ -> dispatchCounter CounterDecrement ] $ $(message "down-button" "Down") []
+       br_ mempty
+       view canvasView (2*pi * (fromIntegral (unCounter counterState) / 100)) mempty
 
 lineChart :: [PropertyOrHandler eh] -> ReactElementM eh ()
 lineChart props = foreign_ "ReactChartLine" props mempty
