@@ -6,7 +6,6 @@ This is a completely overengineered playground to see how well GHCJS + react-flu
 
 ```shell
 git clone https://github.com/agrafix/react-flux-example.git
-chmod +x prepare.sh bundle.sh
 npm run-script prepare
 npm run-script make
 
@@ -19,5 +18,6 @@ open dist/index.html
 * React
 * Integration with 3rdParty JavaScript React Components
 * I18N
-* Closure-Compiler
+* Code mimification
 * JavaScript (dependency) bundling
+* Tested to work in IE9+

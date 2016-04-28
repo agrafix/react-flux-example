@@ -27,15 +27,11 @@ sed -i -- 's/goog.require.*//' $tmpfile
 
 cp $tmpfile $DEV_FILE
 
-echo "Compressing ... "
-prodtmp=$(mktemp /tmp/rawcompapp.XXXXXX)
-java -jar 3rdParty/cc/compiler.jar --compilation_level ADVANCED --js $tmpfile --js_output_file $prodtmp
-
 echo "Building dependencies ... "
 $(npm bin)/browserify export.js > "$DIST/bundle.js"
 
 echo "Building production bundle ... "
-$(npm bin)/uglifyjs --compress -- "$DIST/bundle.js" "$prodtmp" > "$PROD_FILE"
+$(npm bin)/uglifyjs --compress -- "$DIST/bundle.js" "$DEV_FILE" >> "$PROD_FILE"
 
 echo "Copying needed css files ... "
 cp node_modules/leaflet/dist/leaflet.css "$DIST/leaflet.css"

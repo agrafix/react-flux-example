@@ -19,7 +19,7 @@
   },
   "scripts": {
     "make": "./bundle.sh",
-    "prepare": "./prepare.sh"
+    "prepare": "chmod +x prepare.sh bundle.sh && ./prepare.sh"
   },
   "author": "Alexander Thiemann <mail@athiemann.net>",
   "license": "BSD3"
