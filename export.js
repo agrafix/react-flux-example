@@ -1,3 +1,6 @@
+/**
+ * react-flux dependencies
+ */
 window['React'] = require('react');
 window['ReactDOM'] = require('react-dom');
 var ri = require('react-intl');
@@ -13,6 +16,9 @@ window['config'] = {
     locale: 'en'
 };
 
+/**
+ * other ffi dependencies
+ */
 var reactChart = require('react-chartjs');
 window['ReactChartLine'] = reactChart.Line;
 
@@ -21,3 +27,13 @@ window['Leaflet.Map'] = reactLeaflet.Map;
 window['Leaflet.TileLayer'] = reactLeaflet.TileLayer;
 window['Leaflet.Marker'] = reactLeaflet.Marker;
 window['Leaflet.Popup'] = reactLeaflet.Popup;
+
+/**
+ * intl polyfill
+ */
+if (!window['Intl']) {
+    require('intl');
+    require('intl/locale-data/jsonp/en.js');
+    require('intl/locale-data/jsonp/de.js');
+    require('intl/locale-data/jsonp/fr.js');
+}
