@@ -42,3 +42,4 @@ cp node_modules/leaflet/dist/leaflet.css "$DIST/leaflet.css"
 
 echo "Generating index.html ..."
 cp index.html "$DIST/index.html"
+cp index_dev.html "$DIST/index_dev.html"
