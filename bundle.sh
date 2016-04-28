@@ -24,14 +24,16 @@ echo "$PREPEND_JS" | cat - $(stack path --local-install-root)/bin/$EXE_NAME.jsex
 echo "$APPEND_JS" >> $tmpfile
 sed -i -- 's/goog.provide.*//' $tmpfile
 sed -i -- 's/goog.require.*//' $tmpfile
-
 cp $tmpfile $DEV_FILE
 
 echo "Building dependencies ... "
 $(npm bin)/browserify export.js > "$DIST/bundle.js"
 
 echo "Building production bundle ... "
-$(npm bin)/uglifyjs --compress -- "$DIST/bundle.js" "$DEV_FILE" >> "$PROD_FILE"
+tmpbundle=$(mktemp /tmp/prodb.XXXXXX)
+cp "$DIST/bundle.js" "$tmpbundle"
+sed -i -- 's/process.env.NODE_ENV/"production"/' "$tmpbundle"
+$(npm bin)/uglifyjs --compress warnings=false -- "$tmpbundle" "$DEV_FILE" >> "$PROD_FILE"
 
 echo "Copying needed css files ... "
 cp node_modules/leaflet/dist/leaflet.css "$DIST/leaflet.css"
