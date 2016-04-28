@@ -21,3 +21,4 @@ open dist/index.html
 * Code mimification
 * JavaScript (dependency) bundling
 * Tested to work in IE9+
+* Final resulting JavaScript "binary" with all dependencies is only **1.0 MB** in size
