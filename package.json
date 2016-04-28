@@ -1,26 +1,26 @@
 {
-  "name": "react-flux-example",
-  "version": "1.0.0",
-  "description": "",
-  "main": "export.js",
-  "dependencies": {
-    "browserify": "^13.0.0",
-    "chart.js": "^1.1.1",
-    "intl": "^1.1.0",
-    "react": "^15.0.1",
-    "react-chartjs": "^0.7.3",
-    "react-dom": "^15.0.1",
-    "react-intl": "^2.1.1"
-  },
-  "devDependencies": {
-    "leaflet": "^0.7.7",
-    "react-leaflet": "^0.11.2",
-    "uglifyjs": "^2.4.10"
-  },
-  "scripts": {
-    "make": "./bundle.sh",
-    "prepare": "chmod +x prepare.sh bundle.sh && ./prepare.sh"
-  },
-  "author": "Alexander Thiemann <mail@athiemann.net>",
-  "license": "BSD3"
+    "name": "react-flux-example",
+    "version": "1.0.0",
+    "description": "",
+    "main": "export.js",
+    "dependencies": {
+        "chart.js": "^1.1.1",
+        "intl": "^1.1.0",
+        "react": "^15.0.1",
+        "react-chartjs": "^0.7.3",
+        "react-dom": "^15.0.1",
+        "react-intl": "^2.1.1",
+        "leaflet": "^0.7.7",
+        "react-leaflet": "^0.11.2"
+    },
+    "devDependencies": {
+        "browserify": "^13.0.0",
+        "uglifyjs": "^2.4.10"
+    },
+    "scripts": {
+        "make": "./bundle.sh",
+        "prepare": "chmod +x prepare.sh bundle.sh && ./prepare.sh"
+    },
+    "author": "Alexander Thiemann <mail@athiemann.net>",
+    "license": "BSD3"
 }
