@@ -6,6 +6,7 @@
 module Main where
 
 import Canvas
+import Ajax
 
 import Control.DeepSeq
 import Data.Aeson (object, (.=))
@@ -48,6 +49,7 @@ counterApp =
        button_ [ onClick $ \_ _ -> dispatchCounter CounterIncrement ] $ $(message "up-button" "Up") []
        button_ [ onClick $ \_ _ -> dispatchCounter CounterDecrement ] $ $(message "down-button" "Down") []
        br_ mempty
+       view ajaxView () mempty
        view canvasView (2*pi * (fromIntegral (unCounter counterState) / 100)) mempty
 
 lineChart :: [PropertyOrHandler eh] -> ReactElementM eh ()

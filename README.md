@@ -21,5 +21,6 @@ open dist/index.html
 * Code mimification
 * JavaScript (dependency) bundling
 * Canvas
+* AJAX
 * Tested to work in IE9+
-* Final resulting JavaScript "binary" with all dependencies is only **1.0 MB** (gzipped: **248 KB**) in size
+* Final resulting JavaScript "binary" with all dependencies is only **1.1 MB** (gzipped: **253 KB**) in size
