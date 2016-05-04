@@ -1,17 +1,8 @@
 resolver: lts-5.12
 packages:
   - '.'
-  - location:
-      git: https://github.com/agrafix/ghcjs-ajax
-      commit: 03007d96ec266bce343879c533713eaadfe5f7ae
-    subdirs:
-      - ghcjs-ajax
-    extra-dep: true
-
-
 extra-deps:
   - react-flux-1.0.7
-
 compiler: ghcjs-0.2.0.20160414_ghc-7.10.3
 compiler-check: match-exact
 setup-info:
